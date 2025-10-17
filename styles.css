@@ -1,175 +1,149 @@
-/* ======== CONFIGURAÇÃO GERAL ======== */
 * {
-  margin: 0;
-    padding: 0;
-      box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        }
+      margin: 0;
+        padding: 0;
+          box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            }
 
-        body {
-          background: linear-gradient(135deg, #230046, #0a174e);
-            color: #fff;
-              display: flex;
-                justify-content: center;
-                  align-items: center;
-                    min-height: 100vh;
-                    }
+            body {
+              background: linear-gradient(135deg, #1a0059, #041c5e);
+                color: #fff;
+                  display: flex;
+                    justify-content: center;
+                      align-items: flex-start;
+                        min-height: 100vh;
+                          padding: 40px 10px;
+                          }
 
-                    /* ======== CONTAINER PRINCIPAL ======== */
-                    .container {
-                      background: rgba(255, 255, 255, 0.08);
-                        border-radius: 20px;
-                          padding: 30px 25px;
-                            width: 90%;
-                              max-width: 450px;
-                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-                                  backdrop-filter: blur(8px);
-                                    transition: 0.3s;
-                                    }
+                          /* ======== CONTAINER PRINCIPAL ======== */
+                          .container-principal {
+                            background: rgba(255, 255, 255, 0.08);
+                              border-radius: 20px;
+                                padding: 25px;
+                                  width: 95%;
+                                    max-width: 600px;
+                                      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+                                        backdrop-filter: blur(8px);
+                                        }
 
-                                    .container:hover {
-                                      transform: scale(1.01);
-                                      }
+                                        h1 {
+                                          text-align: center;
+                                            color: #cfaaff;
+                                              margin-bottom: 20px;
+                                              }
 
-                                      /* ======== TÍTULOS ======== */
-                                      h1 {
-                                        text-align: center;
-                                          color: #cfaaff;
-                                            margin-bottom: 25px;
-                                              font-size: 1.8em;
-                                                letter-spacing: 1px;
+                                              /* ======== TOPO ======== */
+                                              .topo {
+                                                margin-bottom: 25px;
                                                 }
 
-                                                h2 {
-                                                  margin-top: 25px;
-                                                    color: #9b87ff;
-                                                      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                                                        padding-bottom: 5px;
+                                                label {
+                                                  display: block;
+                                                    font-size: 16px;
+                                                      margin-bottom: 6px;
+                                                        color: #e3d4ff;
                                                         }
 
-                                                        /* ======== CAMPOS DE ENTRADA ======== */
-                                                        label {
-                                                          display: block;
-                                                            margin-bottom: 8px;
-                                                              font-weight: 500;
-                                                                color: #ddd;
-                                                                }
+                                                        input {
+                                                          width: 100%;
+                                                            padding: 10px;
+                                                              margin-bottom: 10px;
+                                                                border: none;
+                                                                  border-radius: 10px;
+                                                                    background: rgba(255, 255, 255, 0.15);
+                                                                      color: white;
+                                                                        font-size: 15px;
+                                                                        }
 
-                                                                input {
-                                                                  width: 100%;
-                                                                    padding: 10px 12px;
-                                                                      margin-bottom: 12px;
-                                                                        border: none;
-                                                                          border-radius: 12px;
-                                                                            background: rgba(255, 255, 255, 0.15);
-                                                                              color: #fff;
-                                                                                font-size: 16px;
-                                                                                  outline: none;
-                                                                                    transition: background 0.3s;
-                                                                                    }
+                                                                        input::placeholder {
+                                                                          color: #ccc;
+                                                                          }
 
-                                                                                    input:focus {
-                                                                                      background: rgba(255, 255, 255, 0.25);
-                                                                                      }
+                                                                          /* ======== BOTÃO ADICIONAR ======== */
+                                                                          .add-box {
+                                                                            display: flex;
+                                                                              flex-direction: column;
+                                                                                gap: 10px;
+                                                                                  margin-bottom: 25px;
+                                                                                  }
 
-                                                                                      input::placeholder {
-                                                                                        color: #c7c7c7;
-                                                                                        }
+                                                                                  button {
+                                                                                    background: linear-gradient(135deg, #7a2cff, #3f00ff);
+                                                                                      border: none;
+                                                                                        border-radius: 10px;
+                                                                                          color: white;
+                                                                                            padding: 10px;
+                                                                                              font-size: 16px;
+                                                                                                cursor: pointer;
+                                                                                                  transition: 0.3s;
+                                                                                                  }
 
-                                                                                        /* ======== BOTÕES ======== */
-                                                                                        button {
-                                                                                          background: linear-gradient(135deg, #7a2cff, #3f00ff);
-                                                                                            border: none;
-                                                                                              border-radius: 12px;
-                                                                                                color: white;
-                                                                                                  padding: 10px;
-                                                                                                    width: 100%;
-                                                                                                      font-size: 16px;
-                                                                                                        font-weight: 500;
-                                                                                                          cursor: pointer;
-                                                                                                            transition: all 0.3s;
-                                                                                                            }
+                                                                                                  button:hover {
+                                                                                                    background: linear-gradient(135deg, #9b66ff, #4a2cff);
+                                                                                                      transform: scale(1.02);
+                                                                                                      }
 
-                                                                                                            button:hover {
-                                                                                                              background: linear-gradient(135deg, #9c66ff, #5a30ff);
-                                                                                                                transform: scale(1.02);
+                                                                                                      /* ======== CONTAINER DE CADA CONTA ======== */
+                                                                                                      .conta-box {
+                                                                                                        background: rgba(255, 255, 255, 0.12);
+                                                                                                          border-left: 4px solid #7a2cff;
+                                                                                                            border-radius: 12px;
+                                                                                                              padding: 15px;
+                                                                                                                margin-bottom: 15px;
                                                                                                                 }
 
-                                                                                                                /* ======== LISTA DE CONTAS ======== */
-                                                                                                                ul {
-                                                                                                                  list-style: none;
-                                                                                                                    padding: 0;
-                                                                                                                      margin-top: 15px;
+                                                                                                                .conta-header {
+                                                                                                                  display: flex;
+                                                                                                                    justify-content: space-between;
+                                                                                                                      align-items: center;
                                                                                                                       }
 
-                                                                                                                      li {
-                                                                                                                        background: rgba(255, 255, 255, 0.1);
-                                                                                                                          margin: 8px 0;
-                                                                                                                            padding: 10px 14px;
-                                                                                                                              border-radius: 10px;
-                                                                                                                                display: flex;
-                                                                                                                                  justify-content: space-between;
-                                                                                                                                    align-items: center;
-                                                                                                                                      transition: background 0.3s;
-                                                                                                                                      }
+                                                                                                                      .conta-header h3 {
+                                                                                                                        color: #cfaaff;
+                                                                                                                          font-size: 1.1em;
+                                                                                                                          }
 
-                                                                                                                                      li:hover {
-                                                                                                                                        background: rgba(255, 255, 255, 0.2);
+                                                                                                                          .remove-btn {
+                                                                                                                            background: #ff4b5c;
+                                                                                                                              border: none;
+                                                                                                                                border-radius: 8px;
+                                                                                                                                  padding: 5px 10px;
+                                                                                                                                    color: white;
+                                                                                                                                      cursor: pointer;
+                                                                                                                                        font-size: 14px;
                                                                                                                                         }
 
-                                                                                                                                        li span {
-                                                                                                                                          font-weight: 500;
-                                                                                                                                            color: #e5daff;
-                                                                                                                                            }
+                                                                                                                                        .remove-btn:hover {
+                                                                                                                                          background: #ff6b7d;
+                                                                                                                                          }
 
-                                                                                                                                            /* ======== BOTÃO REMOVER ======== */
-                                                                                                                                            .remove {
-                                                                                                                                              background-color: #ff4b5c;
-                                                                                                                                                border: none;
-                                                                                                                                                  border-radius: 8px;
-                                                                                                                                                    padding: 5px 10px;
-                                                                                                                                                      color: white;
-                                                                                                                                                        cursor: pointer;
-                                                                                                                                                          font-size: 14px;
-                                                                                                                                                            transition: 0.3s;
-                                                                                                                                                            }
+                                                                                                                                          /* ======== VALORES ======== */
+                                                                                                                                          .valor-info {
+                                                                                                                                            margin-top: 10px;
+                                                                                                                                              line-height: 1.6;
+                                                                                                                                              }
 
-                                                                                                                                                            .remove:hover {
-                                                                                                                                                              background-color: #ff6b7d;
-                                                                                                                                                                transform: scale(1.05);
-                                                                                                                                                                }
+                                                                                                                                              .valor-info input {
+                                                                                                                                                width: 100%;
+                                                                                                                                                  margin-top: 5px;
+                                                                                                                                                  }
 
-                                                                                                                                                                /* ======== RESUMO ======== */
-                                                                                                                                                                .resumo {
-                                                                                                                                                                  margin-top: 25px;
-                                                                                                                                                                    background-color: rgba(255, 255, 255, 0.1);
-                                                                                                                                                                      padding: 15px;
-                                                                                                                                                                        border-radius: 12px;
-                                                                                                                                                                          text-align: center;
-                                                                                                                                                                            line-height: 1.6;
-                                                                                                                                                                            }
+                                                                                                                                                  .valor-info span {
+                                                                                                                                                    color: #cfaaff;
+                                                                                                                                                      font-weight: 600;
+                                                                                                                                                      }
 
-                                                                                                                                                                            .resumo p {
-                                                                                                                                                                              margin: 6px 0;
-                                                                                                                                                                                font-size: 15px;
-                                                                                                                                                                                }
+                                                                                                                                                      /* ======== TOTAL GERAL ======== */
+                                                                                                                                                      .total-geral {
+                                                                                                                                                        margin-top: 25px;
+                                                                                                                                                          background: rgba(255, 255, 255, 0.12);
+                                                                                                                                                            padding: 15px;
+                                                                                                                                                              border-radius: 12px;
+                                                                                                                                                                text-align: center;
+                                                                                                                                                                  line-height: 1.6;
+                                                                                                                                                                  }
 
-                                                                                                                                                                                .resumo span {
-                                                                                                                                                                                  color: #cfaaff;
-                                                                                                                                                                                    font-weight: 600;
-                                                                                                                                                                                    }
-
-                                                                                                                                                                                    /* ======== RESPONSIVIDADE ======== */
-                                                                                                                                                                                    @media (max-width: 400px) {
-                                                                                                                                                                                      .container {
-                                                                                                                                                                                          padding: 20px;
-                                                                                                                                                                                            }
-
-                                                                                                                                                                                              h1 {
-                                                                                                                                                                                                  font-size: 1.5em;
-                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                      button {
-                                                                                                                                                                                                          font-size: 15px;
-                                                                                                                                                                                                            }
-                                                                                                                                                                                                            }
+                                                                                                                                                                  .total-geral span {
+                                                                                                                                                                    color: #9b87ff;
+                                                                                                                                                                      font-weight: 700;
+                                                                                                                                                                      }

@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Controle de Contas</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css">
         </head>
         <body>
-          <div class="container">
-              <h1>💰 Controle de Contas</h1>
+          <div class="container-principal">
+              <h1>💜 Controle de Contas</h1>
 
-                  <div class="saldo-box">
+                  <div class="topo">
                         <label for="dinheiro">Dinheiro guardado (R$):</label>
-                              <input type="number" id="dinheiro" placeholder="Ex: 100" />
+                              <input type="number" id="dinheiro" placeholder="Ex: 1000">
                                   </div>
 
-                                      <div class="add-conta">
-                                            <input type="text" id="descricao" placeholder="Ex: Conta de luz" />
-                                                  <input type="number" id="valor" placeholder="Valor (R$)" />
-                                                        <button id="adicionar">Adicionar Conta</button>
+                                      <div class="add-box">
+                                            <input type="text" id="descricao" placeholder="Ex: Consórcio da moto">
+                                                  <input type="number" id="valor" placeholder="Valor total (R$)">
+                                                        <button id="adicionar">➕ Adicionar Conta</button>
                                                             </div>
 
-                                                                <h2>Minhas contas</h2>
-                                                                    <ul id="lista-contas"></ul>
+                                                                <div id="contas-container"></div>
 
-                                                                        <div class="resumo">
-                                                                              <p><strong>Total das contas:</strong> R$ <span id="total-contas">0.00</span></p>
-                                                                                    <p><strong>Diferença (Dinheiro - Contas):</strong> R$ <span id="diferenca">0.00</span></p>
-                                                                                        </div>
-                                                                                          </div>
+                                                                    <div class="total-geral">
+                                                                          <p><strong>Total a pagar:</strong> R$ <span id="total-a-pagar">0.00</span></p>
+                                                                                <p><strong>Saldo restante:</strong> R$ <span id="saldo-restante">0.00</span></p>
+                                                                                    </div>
+                                                                                      </div>
 
-                                                                                            <script src="script.js"></script>
-                                                                                            </body>
-                                                                                            </html>
+                                                                                        <script src="script.js"></script>
+                                                                                        </body>
+                                                                                        </html>
