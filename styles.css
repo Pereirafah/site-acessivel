@@ -1,200 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+/* ======== CONFIGURAÇÃO GERAL ======== */
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        }
 
-:root {
-    --laranja-claro: #FF862A;
-    --alto-contraste-fundo: #000000;
-    --alto-contraste-texto: #ffffff;
-    --alto-contraste-link: #ffd700;
-}
+        body {
+          background: linear-gradient(135deg, #230046, #0a174e);
+            color: #fff;
+              display: flex;
+                justify-content: center;
+                  align-items: center;
+                    min-height: 100vh;
+                    }
 
-body {
-    font-size: 1rem;
-    font-family: 'Montserrat';
-}
+                    /* ======== CONTAINER PRINCIPAL ======== */
+                    .container {
+                      background: rgba(255, 255, 255, 0.08);
+                        border-radius: 20px;
+                          padding: 30px 25px;
+                            width: 90%;
+                              max-width: 450px;
+                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+                                  backdrop-filter: blur(8px);
+                                    transition: 0.3s;
+                                    }
 
-header {
-    background-color: #ffffff;
-}
+                                    .container:hover {
+                                      transform: scale(1.01);
+                                      }
 
+                                      /* ======== TÍTULOS ======== */
+                                      h1 {
+                                        text-align: center;
+                                          color: #cfaaff;
+                                            margin-bottom: 25px;
+                                              font-size: 1.8em;
+                                                letter-spacing: 1px;
+                                                }
 
-section {
-    padding-bottom: 5rem;
-}
+                                                h2 {
+                                                  margin-top: 25px;
+                                                    color: #9b87ff;
+                                                      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                                                        padding-bottom: 5px;
+                                                        }
 
+                                                        /* ======== CAMPOS DE ENTRADA ======== */
+                                                        label {
+                                                          display: block;
+                                                            margin-bottom: 8px;
+                                                              font-weight: 500;
+                                                                color: #ddd;
+                                                                }
 
-.nav-link {
-    color: #CB6D43;
-    font-weight: 600;
-}
+                                                                input {
+                                                                  width: 100%;
+                                                                    padding: 10px 12px;
+                                                                      margin-bottom: 12px;
+                                                                        border: none;
+                                                                          border-radius: 12px;
+                                                                            background: rgba(255, 255, 255, 0.15);
+                                                                              color: #fff;
+                                                                                font-size: 16px;
+                                                                                  outline: none;
+                                                                                    transition: background 0.3s;
+                                                                                    }
 
-.inicio-fundo {
-    /* aula 3 */
-    background-image: url('img/4965007.jpg');
-    /* Substitua pelo caminho da sua imagem */
-    background-size: cover;
-    background-position: right;
-    border-radius: 80px;
-    width: 100%;
-    height: 606px;
-    padding: 40px;
-    margin: 0 auto;
-}
+                                                                                    input:focus {
+                                                                                      background: rgba(255, 255, 255, 0.25);
+                                                                                      }
 
-/* posicionamento para a imagem à direita */
-.img-inicio {
-    position: absolute;
-    right: 0;
-    top: 18rem;
-    width: 45rem;
-    height: auto;
-}
+                                                                                      input::placeholder {
+                                                                                        color: #c7c7c7;
+                                                                                        }
 
+                                                                                        /* ======== BOTÕES ======== */
+                                                                                        button {
+                                                                                          background: linear-gradient(135deg, #7a2cff, #3f00ff);
+                                                                                            border: none;
+                                                                                              border-radius: 12px;
+                                                                                                color: white;
+                                                                                                  padding: 10px;
+                                                                                                    width: 100%;
+                                                                                                      font-size: 16px;
+                                                                                                        font-weight: 500;
+                                                                                                          cursor: pointer;
+                                                                                                            transition: all 0.3s;
+                                                                                                            }
 
-.esquerda-conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
+                                                                                                            button:hover {
+                                                                                                              background: linear-gradient(135deg, #9c66ff, #5a30ff);
+                                                                                                                transform: scale(1.02);
+                                                                                                                }
 
+                                                                                                                /* ======== LISTA DE CONTAS ======== */
+                                                                                                                ul {
+                                                                                                                  list-style: none;
+                                                                                                                    padding: 0;
+                                                                                                                      margin-top: 15px;
+                                                                                                                      }
 
-.botao-inicio {
-    background-color: var(--laranja-claro);
-    border-radius: 30px;
-    border: none;
-    width: 14em;
-    height: 3em;
-    align-content: center;
+                                                                                                                      li {
+                                                                                                                        background: rgba(255, 255, 255, 0.1);
+                                                                                                                          margin: 8px 0;
+                                                                                                                            padding: 10px 14px;
+                                                                                                                              border-radius: 10px;
+                                                                                                                                display: flex;
+                                                                                                                                  justify-content: space-between;
+                                                                                                                                    align-items: center;
+                                                                                                                                      transition: background 0.3s;
+                                                                                                                                      }
 
-}
+                                                                                                                                      li:hover {
+                                                                                                                                        background: rgba(255, 255, 255, 0.2);
+                                                                                                                                        }
 
-.display-4 {
-    text-shadow: -5px 5px var(--laranja-claro);
-}
+                                                                                                                                        li span {
+                                                                                                                                          font-weight: 500;
+                                                                                                                                            color: #e5daff;
+                                                                                                                                            }
 
+                                                                                                                                            /* ======== BOTÃO REMOVER ======== */
+                                                                                                                                            .remove {
+                                                                                                                                              background-color: #ff4b5c;
+                                                                                                                                                border: none;
+                                                                                                                                                  border-radius: 8px;
+                                                                                                                                                    padding: 5px 10px;
+                                                                                                                                                      color: white;
+                                                                                                                                                        cursor: pointer;
+                                                                                                                                                          font-size: 14px;
+                                                                                                                                                            transition: 0.3s;
+                                                                                                                                                            }
 
-#tropicalia {
-    position: relative;
-    padding-top: 5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    background: url('img/flor.png') top right no-repeat,
-        url('img/flor-esquerda.png') bottom left no-repeat;
-    background-size: 180px 180px;
-    /* Ajuste o tamanho conforme necessário */
-}
+                                                                                                                                                            .remove:hover {
+                                                                                                                                                              background-color: #ff6b7d;
+                                                                                                                                                                transform: scale(1.05);
+                                                                                                                                                                }
 
-#tropicalia .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    /* Garante que o conteúdo fica acima das imagens do background */
-}
+                                                                                                                                                                /* ======== RESUMO ======== */
+                                                                                                                                                                .resumo {
+                                                                                                                                                                  margin-top: 25px;
+                                                                                                                                                                    background-color: rgba(255, 255, 255, 0.1);
+                                                                                                                                                                      padding: 15px;
+                                                                                                                                                                        border-radius: 12px;
+                                                                                                                                                                          text-align: center;
+                                                                                                                                                                            line-height: 1.6;
+                                                                                                                                                                            }
 
+                                                                                                                                                                            .resumo p {
+                                                                                                                                                                              margin: 6px 0;
+                                                                                                                                                                                font-size: 15px;
+                                                                                                                                                                                }
 
-h2 {
-    font-family: 'Lemon', serif;
-    font-size: 2.5em;
-    font-style: normal;
-    color: var(--laranja-claro);
-}
+                                                                                                                                                                                .resumo span {
+                                                                                                                                                                                  color: #cfaaff;
+                                                                                                                                                                                    font-weight: 600;
+                                                                                                                                                                                    }
 
-#galeria {
-    background-color: #FAF4F4;
+                                                                                                                                                                                    /* ======== RESPONSIVIDADE ======== */
+                                                                                                                                                                                    @media (max-width: 400px) {
+                                                                                                                                                                                      .container {
+                                                                                                                                                                                          padding: 20px;
+                                                                                                                                                                                            }
 
-}
+                                                                                                                                                                                              h1 {
+                                                                                                                                                                                                  font-size: 1.5em;
+                                                                                                                                                                                                    }
 
-.fundo-galeria {
-    background: url('img/flor-bottom-direita.png') bottom right no-repeat;
-    background-size: 180px 180px;
-}
-
-#contato {
-    background-image: url('img/4965007.jpg');
-    background-size: cover;
-    padding: 4rem 0;
-    /* Espaçamento interno para a seção de contato */
-
-}
-
-.formulario {
-    background-color: #ffffff;
-    padding: 2rem;
-    /* Espaçamento interno dentro do formulário */
-    border-radius: 10px;
-    /* Borda arredondada para o formulário */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para destacar o formulário */
-    font-weight: bold;
-}
-
-.formulario button {
-    background-color: #CB6D43;
-    border: none;
-    font-weight: bold;
-}
-
-.form-control {
-    background-color: #F1EDEF;
-}
-.menu-acessibilidade{
-    position: fixed;
-    top:2rem;
-    right:20px;
-    z-index: 1000;
-}
-
-.rotacao-botao{
-    transform: rotate(-90deg);
-    transform-origin: right center;
-}
-
-.opcoes-acessibilidade{
-    margin-top:10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.opcoes-acessibilidade button{
-    margin-bottom: 5px;
-}
-.apresenta-lista{
-    display: none;
-}
-
-.alto-contraste{
-    background-color: var(--alto-contraste-fundo);
-    color: var(--alto-contraste-texto);
-}
-
-.alto-contraste header,
-.alto-contraste footer,
-.alto-contraste .formulario{
-    background-color: var(--alto-contraste-fundo);
-    color: var(--alto-contraste-texto);
-}
-
-.alto-contraste .nav-link{
-    color: var(--alto-contraste-link);
-}
-
-.alto-contraste .botao-inicio,
-.alto-contraste .formulario button,
-.alto-contraste .btn-primary{
-    background-color: var(--alto-contraste-link);
-    color: var(--alto-contraste-fundo)
-}
-
-.alto-contraste #tropicalia {
-    background: none;
-}
-
-.alto-contraste #galeria {
-    background-color: var(--alto-contraste-fundo);
-}
-.alto-contraste .fundo-galeria {
-    background: none;
-}
+                                                                                                                                                                                                      button {
+                                                                                                                                                                                                          font-size: 15px;
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            }
