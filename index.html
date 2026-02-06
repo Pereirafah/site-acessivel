@@ -1,72 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-    <title>Mapa da Escola</title>
-      <link rel="stylesheet" href="style.css">
-      </head>
-      <body>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Cassaniquel 🎰</title>
+                <link rel="stylesheet" href="style.css">
+                </head>
+                <body>
 
-      <h1>Mapa Interativo da Escola</h1>
-      <p>Clique em uma sala para ver os detalhes</p>
+                    <div class="slot-machine">
+                            <h1>🎰 Cassaniquel 🎰</h1>
 
-      <div class="mapa">
+                                    <div class="slots">
+                                                <div class="slot" id="slot1">❓</div>
+                                                            <div class="slot" id="slot2">❓</div>
+                                                                        <div class="slot" id="slot3">❓</div>
+                                                                                </div>
 
-        <div class="linha">
-            <div class="sala" data-info="Sala 01 - Turma 9º DI">Sl. 01<br>9º DI</div>
-                <div class="sala" data-info="Sala 02 - Núcleo de Prática Jurídica">Sl. 02<br>N.P.J</div>
-                    <div class="sala" data-info="Sala 03 - Coordenação DI">Sl. 03<br>Coord. DI</div>
-                        <div class="sala" data-info="Sala 04 - Turma 7º DI">Sl. 04<br>7º DI</div>
-                            <div class="sala" data-info="Sala 05/06 - Turma 5º DI">Sl. 05/06<br>5º DI</div>
-                                <div class="sala" data-info="Sala 07/08 - Turma 3º DI">Sl. 07/08<br>3º DI</div>
-                                    <div class="sala" data-info="Sala 09 - Turma 1º DI">Sl. 09<br>1º DI</div>
-                                      </div>
+                                                                                        <button onclick="girar()">GIRAR</button>
+                                                                                                <p id="resultado"></p>
+                                                                                                    </div>
 
-                                        <div class="linha">
-                                            <div class="sala" data-info="Núcleo de Apoio Educacional">Sl. 10<br>N.A.E</div>
-                                                <div class="sala" data-info="Sala de Projetos e Inovação">Sl. 11<br>Projetos</div>
-                                                    <div class="sala" data-info="Observatório e Extensão">Sl. 12<br>Observ.</div>
-                                                        <div class="sala" data-info="Sala Administrativa 5º ADM">Sl. 13<br>5º ADM</div>
-                                                            <div class="sala" data-info="Sala ADM / CC / ES">Sl. 14<br>ADM</div>
-                                                                <div class="sala" data-info="Sala ADM / CC / ES">Sl. 15<br>ADM</div>
-                                                                    <div class="sala destaque" data-info="Espaço Infantil">Brinquedoteca</div>
-                                                                      </div>
-
-                                                                        <div class="linha">
-                                                                            <div class="sala grande" data-info="Área de Alimentação">Cantina</div>
-                                                                                <div class="sala" data-info="Banheiro Masculino">Banheiro Masc.</div>
-                                                                                    <div class="sala" data-info="Banheiro Feminino">Banheiro Fem.</div>
-                                                                                        <div class="sala grande" data-info="Laboratório IV">Laboratório IV</div>
-                                                                                            <div class="sala" data-info="Laboratório de Informática I">Lab. Info I</div>
-                                                                                                <div class="sala" data-info="Laboratório de Informática II">Lab. Info II</div>
-                                                                                                  </div>
-
-                                                                                                    <div class="linha">
-                                                                                                        <div class="sala" data-info="Sala 16/17 - 1º PE">Sl. 16/17<br>1º PE</div>
-                                                                                                            <div class="sala" data-info="Sala 18/19 - 5º PE">Sl. 18/19<br>5º PE</div>
-                                                                                                                <div class="sala" data-info="Núcleo de Educação Especial">N.E.E</div>
-                                                                                                                    <div class="sala" data-info="Sala 20 - 3º PE">Sl. 20<br>3º PE</div>
-                                                                                                                        <div class="sala" data-info="Sala 21 - 7º PE">Sl. 21<br>7º PE</div>
-                                                                                                                          </div>
-
-                                                                                                                            <div class="linha">
-                                                                                                                                <div class="sala grande" data-info="Biblioteca da Instituição">Biblioteca</div>
-                                                                                                                                    <div class="sala" data-info="Sala Administrativa">Sl. 22<br>ADM</div>
-                                                                                                                                        <div class="sala" data-info="Sala Administrativa">Sl. 23<br>ADM</div>
-                                                                                                                                            <div class="sala destaque" data-info="Sala para Palestras e Eventos">Palestra</div>
-                                                                                                                                              </div>
-
-                                                                                                                                              </div>
-
-                                                                                                                                              <!-- Modal -->
-                                                                                                                                              <div id="modal" class="modal">
-                                                                                                                                                <div class="modal-content">
-                                                                                                                                                    <span id="fechar">&times;</span>
-                                                                                                                                                        <p id="modal-texto"></p>
-                                                                                                                                                          </div>
-                                                                                                                                                          </div>
-
-                                                                                                                                                          <script src="script.js"></script>
-                                                                                                                                                          </body>
-                                                                                                                                                          </html>
-                        
+                                                                                                        <script src="script.js"></script>
+                                                                                                        </body>
+                                                                                                        </html>

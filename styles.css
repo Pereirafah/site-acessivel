@@ -1,78 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-      background: #f2f2f2;
-        text-align: center;
-        }
+      background: linear-gradient(135deg, #111, #1a1a1a);
+          color: white;
+              font-family: Arial, sans-serif;
+                  display: flex;
+                      justify-content: center;
+                          align-items: center;
+                              height: 100vh;
+                                  margin: 0;
+                                  }
 
-        h1 {
-          margin-top: 20px;
-          }
-
-          .mapa {
-            display: flex;
-              flex-direction: column;
-                gap: 15px;
-                  padding: 20px;
-                  }
-
-                  .linha {
-                    display: flex;
-                      gap: 10px;
-                        justify-content: center;
-                          flex-wrap: wrap;
-                          }
-
-                          .sala {
-                            background: #fff;
-                              border: 2px solid #333;
-                                padding: 10px;
-                                  width: 120px;
-                                    min-height: 70px;
-                                      display: flex;
-                                        align-items: center;
-                                          justify-content: center;
-                                            text-align: center;
-                                              cursor: pointer;
-                                                transition: 0.2s;
-                                                }
-
-                                                .sala:hover {
-                                                  background: #e0f0ff;
-                                                    transform: scale(1.05);
-                                                    }
-
-                                                    .grande {
-                                                      width: 200px;
+                                  .slot-machine {
+                                      text-align: center;
+                                          background: #222;
+                                              padding: 30px;
+                                                  border-radius: 15px;
+                                                      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
                                                       }
 
-                                                      .destaque {
-                                                        background: #d4f5d4;
-                                                          border-color: #2e7d32;
-                                                          }
+                                                      .slots {
+                                                          display: flex;
+                                                              justify-content: center;
+                                                                  margin: 20px 0;
+                                                                  }
 
-                                                          /* Modal */
-                                                          .modal {
-                                                            display: none;
-                                                              position: fixed;
-                                                                inset: 0;
-                                                                  background: rgba(0,0,0,0.5);
-                                                                    align-items: center;
-                                                                      justify-content: center;
-                                                                      }
+                                                                  .slot {
+                                                                      font-size: 50px;
+                                                                          margin: 0 10px;
+                                                                              padding: 20px;
+                                                                                  background: black;
+                                                                                      border-radius: 10px;
+                                                                                          width: 80px;
+                                                                                          }
 
-                                                                      .modal-content {
-                                                                        background: #fff;
-                                                                          padding: 20px;
-                                                                            width: 300px;
-                                                                              border-radius: 8px;
-                                                                                position: relative;
-                                                                                }
+                                                                                          button {
+                                                                                              padding: 10px 25px;
+                                                                                                  font-size: 16px;
+                                                                                                      background: red;
+                                                                                                          color: white;
+                                                                                                              border: none;
+                                                                                                                  border-radius: 8px;
+                                                                                                                      cursor: pointer;
+                                                                                                                      }
 
-                                                                                #fechar {
-                                                                                  position: absolute;
-                                                                                    top: 8px;
-                                                                                      right: 12px;
-                                                                                        font-size: 20px;
-                                                                                          cursor: pointer;
-                                                                                }
-}                                                                                                               
+                                                                                                                      button:hover {
+                                                                                                                          background: darkred;
+                                                                                                                          }
+}
