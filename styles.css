@@ -1,48 +1,113 @@
 body {
-      background: linear-gradient(135deg, #111, #1a1a1a);
-          color: white;
-              font-family: Arial, sans-serif;
-                  display: flex;
-                      justify-content: center;
-                          align-items: center;
-                              height: 100vh;
-                                  margin: 0;
+      margin: 0;
+        font-family: Arial, sans-serif;
+          background: #000;
+            color: white;
+              text-align: center;
+                overflow: hidden;
+                }
+
+                .storm-bg {
+                  position: fixed;
+                    width: 200%;
+                      height: 200%;
+                        background: radial-gradient(circle at center, #001f3f, #000);
+                          animation: storm 8s linear infinite;
+                            z-index: -1;
+                            }
+
+                            @keyframes storm {
+                              0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                                }
+
+                                .game {
+                                  margin-top: 40px;
                                   }
 
-                                  .slot-machine {
-                                      text-align: center;
-                                          background: #222;
-                                              padding: 30px;
-                                                  border-radius: 15px;
-                                                      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-                                                      }
+                                  .saldo {
+                                    font-size: 22px;
+                                      margin: 10px;
+                                      }
 
-                                                      .slots {
-                                                          display: flex;
-                                                              justify-content: center;
-                                                                  margin: 20px 0;
-                                                                  }
+                                      .grid {
+                                        display: grid;
+                                          grid-template-columns: repeat(3, 90px);
+                                            grid-template-rows: repeat(3, 90px);
+                                              gap: 10px;
+                                                justify-content: center;
+                                                  margin: 20px auto;
+                                                  }
 
-                                                                  .slot {
-                                                                      font-size: 50px;
-                                                                          margin: 0 10px;
-                                                                              padding: 20px;
-                                                                                  background: black;
-                                                                                      border-radius: 10px;
-                                                                                          width: 80px;
-                                                                                          }
+                                                  .cell {
+                                                    width: 90px;
+                                                      height: 90px;
+                                                        background: #002b55;
+                                                          border-radius: 15px;
+                                                            font-size: 40px;
+                                                              display: flex;
+                                                                justify-content: center;
+                                                                  align-items: center;
+                                                                    box-shadow: 0 0 10px #00c3ff;
+                                                                      transition: transform 0.3s;
+                                                                      }
 
-                                                                                          button {
-                                                                                              padding: 10px 25px;
-                                                                                                  font-size: 16px;
-                                                                                                      background: red;
-                                                                                                          color: white;
-                                                                                                              border: none;
-                                                                                                                  border-radius: 8px;
-                                                                                                                      cursor: pointer;
-                                                                                                                      }
+                                                                      .fall {
+                                                                        animation: fall 0.4s ease;
+                                                                        }
 
-                                                                                                                      button:hover {
-                                                                                                                          background: darkred;
-                                                                                                                          }
-}
+                                                                        @keyframes fall {
+                                                                          0% { transform: translateY(-100px); opacity: 0; }
+                                                                            100% { transform: translateY(0); opacity: 1; }
+                                                                            }
+
+                                                                            .win-pulse {
+                                                                              animation: pulse 0.6s infinite;
+                                                                              }
+
+                                                                              @keyframes pulse {
+                                                                                0% { transform: scale(1); }
+                                                                                  50% { transform: scale(1.4); }
+                                                                                    100% { transform: scale(1); }
+                                                                                    }
+
+                                                                                    .bottom-controls {
+                                                                                      position: relative;
+                                                                                        width: 300px;
+                                                                                          margin: 20px auto;
+                                                                                            height: 100px;
+                                                                                            }
+
+                                                                                            .spin-btn {
+                                                                                              position: absolute;
+                                                                                                left: 50%;
+                                                                                                  transform: translateX(-50%);
+                                                                                                    width: 90px;
+                                                                                                      height: 90px;
+                                                                                                        border-radius: 50%;
+                                                                                                          border: none;
+                                                                                                            background: radial-gradient(circle at 30% 30%, #00e1ff, #0077ff);
+                                                                                                              box-shadow: 0 0 25px #00c3ff;
+                                                                                                                cursor: pointer;
+                                                                                                                  transition: 0.2s;
+                                                                                                                  }
+
+                                                                                                                  .spin-btn:active {
+                                                                                                                    transform: translateX(-50%) scale(0.9);
+                                                                                                                    }
+
+                                                                                                                    .turbo-btn {
+                                                                                                                      position: absolute;
+                                                                                                                        left: 0;
+                                                                                                                          bottom: 10px;
+                                                                                                                            background: #001f3f;
+                                                                                                                              padding: 10px 18px;
+                                                                                                                                border-radius: 25px;
+                                                                                                                                  border: 2px solid #00c3ff;
+                                                                                                                                    cursor: pointer;
+                                                                                                                                    }
+
+                                                                                                                                    .resultado {
+                                                                                                                                      font-size: 20px;
+                                                                                                                                        margin-top: 10px;
+                                                                                                                                        }
