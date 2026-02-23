@@ -1,105 +1,73 @@
-const grid = document.getElementById("grid");
-const saldoSpan = document.getElementById("saldo");
-const resultado = document.getElementById("resultado");
-const turbo = document.getElementById("turbo");
+const morse = {
+  A: ".-", B: "-...", C: "-.-.", D: "-..",
+  E: ".", F: "..-.", G: "--.", H: "....",
+  I: "..", J: ".---", K: "-.-", L: ".-..",
+  M: "--", N: "-.", O: "---", P: ".--.",
+  Q: "--.-", R: ".-.", S: "...", T: "-",
+  U: "..-", V: "...-", W: ".--", X: "-..-",
+  Y: "-.--", Z: "--..",
+  0: "-----", 1: ".----", 2: "..---",
+  3: "...--", 4: "....-", 5: ".....",
+  6: "-....", 7: "--...", 8: "---..",
+  9: "----.",
+  " ": "/"
+};
 
-let saldo = 1000;
-let custo = 5;
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-const simbolos = [
-  { icon: "🍃", valor: 5 },
-    { icon: "💨", valor: 10 },
-      { icon: "⚡", valor: 25 },
-        { icon: "🌊", valor: 50 },
-          { icon: "🌪️", valor: 100 }
-          ];
+function beep(duracao) {
+  return new Promise(resolve => {
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
 
-          let cells = [];
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
 
-          function criarGrid() {
-            grid.innerHTML = "";
-              cells = [];
-                for (let i = 0; i < 9; i++) {
-                    const cell = document.createElement("div");
-                        cell.classList.add("cell");
-                            grid.appendChild(cell);
-                                cells.push(cell);
-                                  }
-                                  }
+    oscillator.frequency.value = 700;
+    oscillator.type = "sine";
 
-                                  criarGrid();
+    oscillator.start();
 
-                                  function girar() {
-                                    if (saldo < custo) {
-                                        resultado.innerText = "Saldo insuficiente!";
-                                            return;
-                                              }
+    document.getElementById("luz").classList.add("ligada");
 
-                                                saldo -= custo;
-                                                  saldoSpan.innerText = saldo;
-                                                    resultado.innerText = "";
+    setTimeout(() => {
+      oscillator.stop();
+      document.getElementById("luz").classList.remove("ligada");
+      resolve();
+    }, duracao);
+  });
+}
 
-                                                      const velocidade = turbo.checked ? 100 : 400;
+function esperar(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-                                                        cells.forEach((cell, index) => {
-                                                            setTimeout(() => {
-                                                                  const rand = Math.random();
+async function iniciar() {
+  const texto = document.getElementById("texto").value.toUpperCase();
+  let codigo = "";
 
-                                                                        let simbolo;
+  for (let letra of texto) {
+    if (morse[letra]) {
+      codigo += morse[letra] + " ";
+    }
+  }
 
-                                                                              // 97% erro (aleatório)
-                                                                                    if (rand < 0.97) {
-                                                                                            simbolo = simbolos[Math.floor(Math.random() * simbolos.length)];
-                                                                                                  } else {
-                                                                                                          simbolo = simbolos[4]; // furacão raro
-                                                                                                                }
+  document.getElementById("saida").textContent = codigo;
 
-                                                                                                                      cell.innerText = simbolo.icon;
-                                                                                                                            cell.dataset.valor = simbolo.valor;
-                                                                                                                                  cell.classList.add("fall");
-                                                                                                                                        setTimeout(() => cell.classList.remove("fall"), 300);
+  for (let simbolo of codigo) {
 
-                                                                                                                                            }, index * velocidade);
-                                                                                                                                              });
+    if (simbolo === ".") {
+      await beep(150);
+      await esperar(150);
+    }
 
-                                                                                                                                                setTimeout(verificarResultado, 1200);
-                                                                                                                                                }
+    if (simbolo === "-") {
+      await beep(400);
+      await esperar(150);
+    }
 
-                                                                                                                                                function verificarResultado() {
-
-                                                                                                                                                  const linhas = [
-                                                                                                                                                      [0,1,2],
-                                                                                                                                                          [3,4,5],
-                                                                                                                                                              [6,7,8],
-                                                                                                                                                                  [0,4,8],
-                                                                                                                                                                      [2,4,6]
-                                                                                                                                                                        ];
-
-                                                                                                                                                                          let totalGanho = 0;
-
-                                                                                                                                                                            linhas.forEach(linha => {
-                                                                                                                                                                                const [a,b,c] = linha;
-
-                                                                                                                                                                                    if (
-                                                                                                                                                                                          cells[a].innerText &&
-                                                                                                                                                                                                cells[a].innerText === cells[b].innerText &&
-                                                                                                                                                                                                      cells[a].innerText === cells[c].innerText
-                                                                                                                                                                                                          ) {
-                                                                                                                                                                                                                const valor = parseInt(cells[a].dataset.valor);
-                                                                                                                                                                                                                      const ganho = valor * 3;
-                                                                                                                                                                                                                            totalGanho += ganho;
-
-                                                                                                                                                                                                                                  linha.forEach(i => cells[i].classList.add("win-pulse"));
-                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                        });
-
-                                                                                                                                                                                                                                          if (totalGanho > 0) {
-                                                                                                                                                                                                                                              saldo += totalGanho;
-                                                                                                                                                                                                                                                  saldoSpan.innerText = saldo;
-                                                                                                                                                                                                                                                      resultado.innerText = `🎉 Você ganhou ${totalGanho} pontos!`;
-
-                                                                                                                                                                                                                                                          setTimeout(() => {
-                                                                                                                                                                                                                                                                cells.forEach(c => c.classList.remove("win-pulse"));
-                                                                                                                                                                                                                                                                    }, 2000);
-                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                      }
+    if (simbolo === "/") {
+      await esperar(600);
+    }
+  }
+}

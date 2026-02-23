@@ -1,113 +1,65 @@
 body {
-      margin: 0;
-        font-family: Arial, sans-serif;
-          background: #000;
-            color: white;
-              text-align: center;
-                overflow: hidden;
-                }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #000000, #111);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-                .storm-bg {
-                  position: fixed;
-                    width: 200%;
-                      height: 200%;
-                        background: radial-gradient(circle at center, #001f3f, #000);
-                          animation: storm 8s linear infinite;
-                            z-index: -1;
-                            }
+.container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffcc;
+}
 
-                            @keyframes storm {
-                              0% { transform: rotate(0deg); }
-                                100% { transform: rotate(360deg); }
-                                }
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  resize: none;
+}
 
-                                .game {
-                                  margin-top: 40px;
-                                  }
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-                                  .saldo {
-                                    font-size: 22px;
-                                      margin: 10px;
-                                      }
+.resultado {
+  margin-top: 20px;
+  background: black;
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 60px;
+  font-size: 18px;
+}
 
-                                      .grid {
-                                        display: grid;
-                                          grid-template-columns: repeat(3, 90px);
-                                            grid-template-rows: repeat(3, 90px);
-                                              gap: 10px;
-                                                justify-content: center;
-                                                  margin: 20px auto;
-                                                  }
+.luz {
+  width: 50px;
+  height: 50px;
+  background: #222;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 0 10px #000;
+  transition: 0.1s;
+}
 
-                                                  .cell {
-                                                    width: 90px;
-                                                      height: 90px;
-                                                        background: #002b55;
-                                                          border-radius: 15px;
-                                                            font-size: 40px;
-                                                              display: flex;
-                                                                justify-content: center;
-                                                                  align-items: center;
-                                                                    box-shadow: 0 0 10px #00c3ff;
-                                                                      transition: transform 0.3s;
-                                                                      }
-
-                                                                      .fall {
-                                                                        animation: fall 0.4s ease;
-                                                                        }
-
-                                                                        @keyframes fall {
-                                                                          0% { transform: translateY(-100px); opacity: 0; }
-                                                                            100% { transform: translateY(0); opacity: 1; }
-                                                                            }
-
-                                                                            .win-pulse {
-                                                                              animation: pulse 0.6s infinite;
-                                                                              }
-
-                                                                              @keyframes pulse {
-                                                                                0% { transform: scale(1); }
-                                                                                  50% { transform: scale(1.4); }
-                                                                                    100% { transform: scale(1); }
-                                                                                    }
-
-                                                                                    .bottom-controls {
-                                                                                      position: relative;
-                                                                                        width: 300px;
-                                                                                          margin: 20px auto;
-                                                                                            height: 100px;
-                                                                                            }
-
-                                                                                            .spin-btn {
-                                                                                              position: absolute;
-                                                                                                left: 50%;
-                                                                                                  transform: translateX(-50%);
-                                                                                                    width: 90px;
-                                                                                                      height: 90px;
-                                                                                                        border-radius: 50%;
-                                                                                                          border: none;
-                                                                                                            background: radial-gradient(circle at 30% 30%, #00e1ff, #0077ff);
-                                                                                                              box-shadow: 0 0 25px #00c3ff;
-                                                                                                                cursor: pointer;
-                                                                                                                  transition: 0.2s;
-                                                                                                                  }
-
-                                                                                                                  .spin-btn:active {
-                                                                                                                    transform: translateX(-50%) scale(0.9);
-                                                                                                                    }
-
-                                                                                                                    .turbo-btn {
-                                                                                                                      position: absolute;
-                                                                                                                        left: 0;
-                                                                                                                          bottom: 10px;
-                                                                                                                            background: #001f3f;
-                                                                                                                              padding: 10px 18px;
-                                                                                                                                border-radius: 25px;
-                                                                                                                                  border: 2px solid #00c3ff;
-                                                                                                                                    cursor: pointer;
-                                                                                                                                    }
-
-                                                                                                                                    .resultado {
-                                                                                                                                      font-size: 20px;
-                                                                                                                                        margin-top: 10px;
-                                                                                                                                        }
+.ligada {
+  background: red;
+  box-shadow: 0 0 25px red;
+}

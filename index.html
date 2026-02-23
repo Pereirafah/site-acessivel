@@ -1,34 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Furacãozinho</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="storm-bg"></div>
-
-<div class="game">
-  <h1>🌪️ FURACÃOZINHO</h1>
-
-    <div class="saldo">Saldo: <span id="saldo">1000</span></div>
-
-      <div class="grid" id="grid"></div>
-
-        <div class="bottom-controls">
-            <label class="turbo-btn">
-                  <input type="checkbox" id="turbo">
-                        ⚡ Turbo
-                            </label>
-
-                                <button class="spin-btn" onclick="girar()"></button>
-                                  </div>
-
-                                    <div class="resultado" id="resultado"></div>
-                                    </div>
-
-                                    <script src="script.js"></script>
-                                    </body>
-                                    </html>
+<!doctype html>
+<html lang="pt-br"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Simulador de Telégrafo</title> 
+  <link rel="stylesheet" href="style.css"> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <h1>📡 Simulador de Telégrafo</h1> <textarea id="texto" placeholder="Digite sua mensagem..."></textarea> <button onclick="iniciar()">Converter e Reproduzir</button> 
+   <h2>Código Morse:</h2> 
+   <div id="saida" class="resultado"></div> 
+   <div id="luz" class="luz"></div> 
+  </div> 
+  <script src="script.js"></script> 
+ </body>
+</html>
